@@ -98,4 +98,4 @@ knife4j:
       default:
         api-rule: package
         api-rule-resources:
-          - com.luoyan.springbootinit.controller
+          - com.luoyan.controller

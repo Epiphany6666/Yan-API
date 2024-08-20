@@ -1,4 +1,4 @@
-package com.luoyan.springbootinit;
+package com.luoyan;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -169,7 +169,7 @@ PUT post_v1
 
 ```
 // 指定生成参数
-String packageName = "com.luoyan.springbootinit";
+String packageName = "com.luoyan";
 String dataName = "用户评论";
 String dataKey = "userComment";
 String upperDataKey = "UserComment";
