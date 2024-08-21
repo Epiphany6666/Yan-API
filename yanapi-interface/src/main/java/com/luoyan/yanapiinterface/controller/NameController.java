@@ -1,6 +1,6 @@
 package com.luoyan.yanapiinterface.controller;
 
-import org.apache.catalina.User;
+import com.luoyan.yanapiinterface.model.User;
 import org.springframework.web.bind.annotation.*;
 
 /**
