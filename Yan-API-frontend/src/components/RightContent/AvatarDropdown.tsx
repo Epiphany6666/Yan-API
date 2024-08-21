@@ -8,6 +8,7 @@ import type { MenuInfo } from 'rc-menu/lib/interface';
 import React, { useCallback } from 'react';
 import { flushSync } from 'react-dom';
 import HeaderDropdown from '../HeaderDropdown';
+import { userLogoutUsingPost } from '@/services/Yan-API-backend/userController';
 
 export type GlobalHeaderRightProps = {
   menu?: boolean;
@@ -16,8 +17,8 @@ export type GlobalHeaderRightProps = {
 
 export const AvatarName = () => {
   const { initialState } = useModel('@@initialState');
-  const { currentUser } = initialState || {};
-  return <span className="anticon">{currentUser?.name}</span>;
+  const { loginUser } = initialState || {};
+  return <span className="anticon">{loginUser?.name}</span>;
 };
 
 const useStyles = createStyles(({ token }) => {
@@ -67,9 +68,12 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, childre
       const { key } = event;
       if (key === 'logout') {
         flushSync(() => {
-          setInitialState((s) => ({ ...s, currentUser: undefined }));
+          setInitialState((s) => ({ ...s, loginUser: undefined }));
         });
-        loginOut();
+        userLogoutUsingPost();
+        const { search, pathname } = window.location;
+        const redirect = pathname + search;
+        history.replace('/user/login', { redirect });
         return;
       }
       history.push(`/account/${key}`);
@@ -93,9 +97,9 @@ export const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu, childre
     return loading;
   }
 
-  const { currentUser } = initialState;
+  const { loginUser } = initialState;
 
-  if (!currentUser || !currentUser.name) {
+  if (!loginUser || !loginUser.userName) {
     return loading;
   }
 
