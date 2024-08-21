@@ -10,7 +10,7 @@ import lombok.Data;
  * 接口信息
  * @TableName interface_info
  */
-@TableName(value ="interface_info")
+@TableName(value ="interface_info", autoResultMap = true)
 @Data
 public class InterfaceInfo implements Serializable {
     /**
@@ -37,11 +37,13 @@ public class InterfaceInfo implements Serializable {
     /**
      * 请求头
      */
+    @TableField("request_header")
     private String requestHeader;
 
     /**
      * 响应头
      */
+    @TableField("response_header")
     private String responseHeader;
 
     /**
@@ -57,22 +59,26 @@ public class InterfaceInfo implements Serializable {
     /**
      * 创建人
      */
+    @TableField("user_id")
     private Long userId;
 
     /**
      * 创建时间
      */
+    @TableField("create_time")
     private Date createTime;
 
     /**
      * 更新时间
      */
+    @TableField("update_time")
     private Date updateTime;
 
     /**
      * 是否删除(0-未删, 1-已删)
      */
     @TableLogic
+    @TableField("is_delete")
     private Integer isDelete;
 
     @TableField(exist = false)
