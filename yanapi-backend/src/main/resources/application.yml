@@ -1,7 +1,7 @@
 # 公共配置文件
 spring:
   application:
-    name: Yan-API-backend
+    name: yanapi-backend
   # 默认 dev 环境
   profiles:
     active: dev

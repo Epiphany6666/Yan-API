@@ -10,9 +10,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.luoyan</groupId>
-    <artifactId>Yan-API-backend</artifactId>
+    <artifactId>yanapi-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Yan-API-backend</name>
+    <name>yanapi-backend</name>
     <properties>
         <java.version>1.8</java.version>
     </properties>

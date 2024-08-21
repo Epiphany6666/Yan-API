@@ -10,4 +10,4 @@ COPY src ./src
 RUN mvn package -DskipTests
 
 # Run the web service on container startup.
-CMD ["java","-jar","/app/target/Yan-API-backend-0.0.1-SNAPSHOT.jar","--spring.profiles.active=prod"]
+CMD ["java","-jar","/app/target/yanapi-backend-0.0.1-SNAPSHOT.jar","--spring.profiles.active=prod"]
