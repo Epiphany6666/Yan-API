@@ -229,7 +229,7 @@ const TableList: React.FC = () => {
           </Button>,
         ]}
         request={async (params, sort: Record<string, SortOrder>, filter: Record<string, React.ReactText[] | null>) => {
-          const res = await listInterfaceInfoByPageUsingPost({
+          const res: API.BaseResponsePageInterfaceInfo_ = await listInterfaceInfoByPageUsingPost({
             ...params
           })
           if (res?.data) {
@@ -237,6 +237,12 @@ const TableList: React.FC = () => {
               data: res?.data.records || [],
               success: true,
               total: res.total,
+            }
+          } else {
+            return {
+              data: [],
+              success: false,
+              total: 0,
             }
           }
         }}

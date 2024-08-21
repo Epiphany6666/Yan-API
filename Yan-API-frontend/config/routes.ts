@@ -4,18 +4,18 @@ export default [
     layout: false,
     routes: [{ name: '登录', path: '/user/login', component: './User/Login' }],
   },
-  { path: '/welcome', name: '欢迎', icon: 'smile', component: './Welcome' },
+  // { path: '/welcome', name: '欢迎', icon: 'smile', component: './Welcome' },
   {
     path: '/admin',
     name: '管理页',
     icon: 'crown',
+    // 权限控制可以去看 and design pro 的官方文档，不用纠结为什么这么写，就是人家设定的规则而已
     access: 'canAdmin',
     routes: [
-      { path: '/admin', redirect: '/admin/sub-page' },
-      { path: '/admin/sub-page', name: '二级管理页', component: './Admin' },
+      { name: '接口管理', icon: 'table', path: '/admin/interface_info', component: './InterfaceInfo' },
     ],
   },
-  { name: '查询表格', icon: 'table', path: '/list', component: './TableList' },
-  { path: '/', redirect: '/welcome' },
+
+  // { path: '/', redirect: '/welcome' },
   { path: '*', layout: false, component: './404' },
 ];
