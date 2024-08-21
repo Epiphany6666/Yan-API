@@ -29,12 +29,12 @@ public class InterfaceInfoAddRequest implements Serializable {
     /**
      * 请求头
      */
-    private String request_header;
+    private String requestHeader;
 
     /**
      * 响应头
      */
-    private String response_header;
+    private String responseHeader;
 
     /**
      * 请求类型

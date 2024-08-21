@@ -36,12 +36,12 @@ public class InterfaceInfoQueryRequest extends PageRequest implements Serializab
     /**
      * 请求头
      */
-    private String request_header;
+    private String requestHeader;
 
     /**
      * 响应头
      */
-    private String response_header;
+    private String responseHeader;
 
     /**
      * 接口状态（0-关闭，1-开启）
@@ -56,5 +56,5 @@ public class InterfaceInfoQueryRequest extends PageRequest implements Serializab
     /**
      * 创建人
      */
-    private Long user_id;
+    private Long userId;
 }
