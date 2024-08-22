@@ -115,6 +115,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.luoyan</groupId>
+            <artifactId>yanapi-client-sdk</artifactId>
+            <version>0.0.1</version>
+        </dependency>
     </dependencies>
 
     <build>

@@ -99,3 +99,7 @@ knife4j:
         api-rule: package
         api-rule-resources:
           - com.luoyan.controller
+yanapi:
+  client:
+    access-key: luoyan
+    secret-key: abcdefg

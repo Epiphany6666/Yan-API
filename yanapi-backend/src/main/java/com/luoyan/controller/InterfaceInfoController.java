@@ -3,10 +3,7 @@ package com.luoyan.controller;
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.luoyan.annotation.AuthCheck;
-import com.luoyan.common.BaseResponse;
-import com.luoyan.common.DeleteRequest;
-import com.luoyan.common.ErrorCode;
-import com.luoyan.common.ResultUtils;
+import com.luoyan.common.*;
 import com.luoyan.constant.UserConstant;
 import com.luoyan.exception.BusinessException;
 import com.luoyan.exception.ThrowUtils;
@@ -16,10 +13,13 @@ import com.luoyan.model.dto.interfaceInfo.InterfaceInfoQueryRequest;
 import com.luoyan.model.dto.interfaceInfo.InterfaceInfoUpdateRequest;
 import com.luoyan.model.entity.InterfaceInfo;
 import com.luoyan.model.entity.User;
+import com.luoyan.model.enums.InterfaceInfoStatusEnum;
 import com.luoyan.model.vo.InterfaceInfoVO;
 import com.luoyan.service.InterfaceInfoService;
 import com.luoyan.service.UserService;
+import com.luoyan.yanapiclientsdk.client.YanApiClient;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,7 +28,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
- * 帖子接口
+ * 接口管理
  */
 @RestController
 @RequestMapping("/interfaceInfo")
@@ -40,6 +40,9 @@ public class InterfaceInfoController {
 
     @Resource
     private UserService userService;
+
+    @Resource
+    private YanApiClient yanApiClient;
 
     // region 增删改查
 
@@ -148,6 +151,70 @@ public class InterfaceInfoController {
                 interfaceInfoService.getQueryWrapper(interfaceInfoQueryRequest));
         return ResultUtils.success(interfaceInfoPage);
     }
+
+    /**
+     * 上线
+     *
+     * @param idRequest
+     * @return
+     */
+    @PostMapping("/online")
+    @AuthCheck(mustRole = UserConstant.ADMIN_ROLE)
+    public BaseResponse<Boolean> onlineInterfaceInfo(@RequestBody IdRequest idRequest) {
+        if (idRequest == null || idRequest.getId() <= 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        long id = idRequest.getId();
+        // 判断是否存在
+        InterfaceInfo oldInterfaceInfo = interfaceInfoService.getById(id);
+        ThrowUtils.throwIf(oldInterfaceInfo == null, ErrorCode.NOT_FOUND_ERROR);
+        // 2.判断该接口是否可以调用
+        com.luoyan.yanapiclientsdk.model.User user = new com.luoyan.yanapiclientsdk.model.User();
+        user.setUsername("luoyan");
+        String username = yanApiClient.getUserNameByPost(user);
+        if (StringUtils.isBlank(username)) {
+            throw new BusinessException(ErrorCode.SYSTEM_ERROR, "接口验证失败");
+        }
+        InterfaceInfo interfaceInfo = new InterfaceInfo();
+        interfaceInfo.setId(id);
+        interfaceInfo.setStatus(InterfaceInfoStatusEnum.ONLINE.getValue());
+
+        boolean result = interfaceInfoService.updateById(interfaceInfo);
+        return ResultUtils.success(result);
+    }
+
+
+    /**
+     * 下线
+     *
+     * @param idRequest
+     * @return
+     */
+    @PostMapping("/offline")
+    @AuthCheck(mustRole = UserConstant.ADMIN_ROLE)
+    public BaseResponse<Boolean> offlineInterfaceInfo(@RequestBody IdRequest idRequest) {
+        if (idRequest == null || idRequest.getId() <= 0) {
+            throw new BusinessException(ErrorCode.PARAMS_ERROR);
+        }
+        long id = idRequest.getId();
+        // 判断是否存在
+        InterfaceInfo oldInterfaceInfo = interfaceInfoService.getById(id);
+        ThrowUtils.throwIf(oldInterfaceInfo == null, ErrorCode.NOT_FOUND_ERROR);
+        // 2.判断该接口是否可以调用
+        com.luoyan.yanapiclientsdk.model.User user = new com.luoyan.yanapiclientsdk.model.User();
+        user.setUsername("luoyan");
+        String username = yanApiClient.getUserNameByPost(user);
+        if (StringUtils.isBlank(username)) {
+            throw new BusinessException(ErrorCode.SYSTEM_ERROR, "接口验证失败");
+        }
+        InterfaceInfo interfaceInfo = new InterfaceInfo();
+        interfaceInfo.setId(id);
+        interfaceInfo.setStatus(InterfaceInfoStatusEnum.OFFLINE.getValue());
+
+        boolean result = interfaceInfoService.updateById(interfaceInfo);
+        return ResultUtils.success(result);
+    }
+
 
     /**
      * 分页获取列表（封装类）
