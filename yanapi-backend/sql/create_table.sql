@@ -13,6 +13,7 @@ create table if not exists yan_api.`interface_info`
     `name` varchar(256) not null comment '名称',
     `description` varchar(256) null comment '描述',
     `url` varchar(512) not null comment '接口地址',
+    `requestParams` text not null comment '请求参数',
     `request_header` text null comment '请求头',
     `response_header` text null comment '响应头',
     `status` int default 0 not null comment '接口状态（0-关闭，1-开启）',

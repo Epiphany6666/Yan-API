@@ -53,7 +53,7 @@ export async function getInterfaceInfoVoByIdUsingGet(
   params: API.getInterfaceInfoVOByIdUsingGETParams,
   options?: { [key: string]: any },
 ) {
-  return request<API.BaseResponseInterfaceInfoVO_>('/api/interfaceInfo/get/vo', {
+  return request<API.BaseResponseInterfaceInfo_>('/api/interfaceInfo/get/vo', {
     method: 'GET',
     params: {
       ...params,

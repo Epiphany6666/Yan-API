@@ -35,6 +35,15 @@ public class InterfaceInfo implements Serializable {
     private String url;
 
     /**
+     * 请求参数
+     * [
+     * 	  {"name": "username", "type": "string"}
+     * ]
+     */
+    @TableField("request_params")
+    private String requestParams;
+
+    /**
      * 请求头
      */
     @TableField("request_header")

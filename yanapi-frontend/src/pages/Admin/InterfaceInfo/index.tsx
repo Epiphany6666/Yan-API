@@ -26,7 +26,7 @@ const TableList: React.FC = () => {
    * */
   const [updateModalOpen, handleUpdateModalOpen] = useState<boolean>(false);
   const [showDetail, setShowDetail] = useState<boolean>(false);
-  const actionRef = useRef<ActionType>();
+  const actionRef = useRef<API.InterfaceInfo>();
   const [currentRow, setCurrentRow] = useState<API.InterfaceInfo>();
   const [selectedRowsState, setSelectedRows] = useState<API.InterfaceInfo[]>([]);
 
@@ -200,14 +200,19 @@ const TableList: React.FC = () => {
         valueType: 'text',
       },
       {
+        title: '请求参数',
+        dataIndex: 'requestParams',
+        valueType: 'jsonCode',
+      },
+      {
         title: '请求头',
         dataIndex: 'requestHeader',
-        valueType: 'textarea',
+        valueType: 'jsonCode',
       },
       {
         title: '响应头',
         dataIndex: 'responseHeader',
-        valueType: 'textarea',
+        valueType: 'jsonCode',
       },
       {
         title: '状态',

@@ -9,6 +9,7 @@
             <result property="name" column="name" jdbcType="VARCHAR"/>
             <result property="description" column="description" jdbcType="VARCHAR"/>
             <result property="url" column="url" jdbcType="VARCHAR"/>
+            <result property="requestParams" column="request_params" jdbcType="VARCHAR"/>
             <result property="requestHeader" column="request_header" jdbcType="VARCHAR"/>
             <result property="responseHeader" column="response_header" jdbcType="VARCHAR"/>
             <result property="status" column="status" jdbcType="INTEGER"/>
