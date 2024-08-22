@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.luoyan.model.entity.InterfaceInfo;
 import com.luoyan.model.entity.Post;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;
@@ -98,7 +99,7 @@ public class InterfaceInfoVO implements Serializable {
      * @param interfaceInfo
      * @return
      */
-    public static InterfaceInfoVO objToVo(Post interfaceInfo) {
+    public static InterfaceInfoVO objToVo(InterfaceInfo interfaceInfo) {
         if (interfaceInfo == null) {
             return null;
         }
