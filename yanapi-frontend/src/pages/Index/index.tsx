@@ -39,7 +39,7 @@ const Index: React.FC = () => {
               actions={[<a key={item.id} href={apiLink}>查看</a>]}
             >
               <List.Item.Meta
-                title={<a href='https://ant.design'>{item.name}</a>}
+                title={<a href={apiLink}>{item.name}</a>}
                 description={item.description}
               />
             </List.Item>
