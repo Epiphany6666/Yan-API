@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { PageContainer } from '@ant-design/pro-components';
-import { Card, Descriptions, message } from 'antd';
+import { Button, Card, Descriptions, Form, message, Input } from 'antd';
 import { getInterfaceInfoVoByIdUsingGet } from '@/services/Yan-API-backend/interfaceInfoController';
 import { useParams } from 'react-router';
 
@@ -28,6 +28,10 @@ const Index: React.FC = () => {
     loadData()
   }, [])
 
+  const onFinish = (values: any) => {
+    console.log('Success:', values);
+  };
+
   return (
     <PageContainer title='查看接口'>
       <Card>
@@ -48,6 +52,22 @@ const Index: React.FC = () => {
             <>接口不存在</>
           )
         }
+      </Card>
+      <Card>
+        {/* 创建一个表单,表单名称为"invoke",布局方式为垂直布局,当表单提交时调用onFinish方法 */}
+        <Form name="invoke" layout="vertical" onFinish={onFinish}>
+          {/* 创建一个表单项,用于输入请求参数,表单项名称为"userRequestParams" */}
+          <Form.Item label="请求参数" name="userRequestParams">
+            <Input.TextArea />
+          </Form.Item>
+          {/* 创建一个包裹项,设置其宽度占据 16 个栅格列 */}
+          <Form.Item wrapperCol={{ span: 16 }}>
+            {/* 创建调用按钮*/}
+            <Button type="primary" htmlType="submit">
+              调用
+            </Button>
+          </Form.Item>
+        </Form>
       </Card>
     </PageContainer>
   );
