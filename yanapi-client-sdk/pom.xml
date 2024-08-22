@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.luoyan</groupId>
-    <artifactId>yanapi-interface</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <name>yanapi-interface</name>
-    <description>yanapi-interface</description>
+    <artifactId>yanapi-client-sdk</artifactId>
+    <version>0.0.1</version>
+    <name>yanapi-client-sdk</name>
+    <description>yanapi-client-sdk</description>
     <url/>
     <licenses>
         <license/>
@@ -31,20 +31,13 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>com.luoyan</groupId>
-            <artifactId>yanapi-client-sdk</artifactId>
-            <version>0.0.1</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
+            <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
         <dependency>
@@ -63,24 +56,7 @@
             <artifactId>hutool-all</artifactId>
             <version>5.8.26</version>
         </dependency>
-
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

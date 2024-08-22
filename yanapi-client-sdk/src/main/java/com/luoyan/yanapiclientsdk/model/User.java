@@ -1,4 +1,4 @@
-package com.luoyan.yanapiinterface.model;
+package com.luoyan.yanapiclientsdk.model;
 
 import lombok.Data;
 
