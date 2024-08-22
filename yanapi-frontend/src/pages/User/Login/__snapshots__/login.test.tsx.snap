@@ -85,7 +85,7 @@ exports[`Login Page should login success 1`] = `
                     <span
                       class="ant-pro-base-menu-inline-item-text ant-pro-base-menu-inline-item-text-has-icon"
                     >
-                      Welcome
+                      Index
                     </span>
                   </div>
                 </span>
@@ -329,9 +329,9 @@ exports[`Login Page should login success 1`] = `
                 >
                   <span
                     class="ant-page-header-heading-title"
-                    title="Welcome"
+                    title="Index"
                   >
-                    Welcome
+                    Index
                   </span>
                 </div>
               </div>
