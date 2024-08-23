@@ -16,4 +16,6 @@ public interface UserInterfaceInfoService extends IService<UserInterfaceInfo> {
     void validUserInterfaceInfo(UserInterfaceInfo userInterfaceInfo, boolean add);
 
     Wrapper<UserInterfaceInfo> getQueryWrapper(UserInterfaceInfoQueryRequest userUserInterfaceInfoQueryRequest);
+
+    boolean invokeCount(long interfaceInfoId, long userId);
 }
