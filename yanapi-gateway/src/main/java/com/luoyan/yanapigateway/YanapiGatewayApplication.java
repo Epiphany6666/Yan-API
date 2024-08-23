@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class YanapiGatewayApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(YanapiGatewayApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(YanapiGatewayApplication.class, args);
+	}
 
 }
