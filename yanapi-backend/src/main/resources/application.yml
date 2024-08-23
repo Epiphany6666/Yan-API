@@ -102,4 +102,4 @@ knife4j:
 yanapi:
   client:
     access-key: luoyan
-    secret-key: abcdefg
+    secret-key: abcdefgh

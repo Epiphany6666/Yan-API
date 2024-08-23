@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { PageContainer } from '@ant-design/pro-components';
-import { Button, Card, Descriptions, Form, message, Input } from 'antd';
-import { getInterfaceInfoVoByIdUsingGet } from '@/services/Yan-API-backend/interfaceInfoController';
+import { Button, Card, Descriptions, Form, message, Input, Divider } from 'antd';
+import {
+  getInterfaceInfoVoByIdUsingGet,
+  invokeInterfaceInfoUsingPost,
+} from '@/services/Yan-API-backend/interfaceInfoController';
 import { useParams } from 'react-router';
 
 const Index: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<API.InterfaceInfo>();
   const params = useParams()
+  // 存储结果变量
+  const [invokeRes, setInvokeRes] = useState<any>();
+  // 调用加载状态变量，默认为false
+  const [invokeLoading, setInvokeLoading] = useState(false);
 
   const loadData = async () => {
     if (!params.id) {
@@ -28,9 +35,30 @@ const Index: React.FC = () => {
     loadData()
   }, [])
 
-  const onFinish = (values: any) => {
-    console.log('Success:', values);
-  };
+  const onFinish = async (values: any) => {
+    if (!params.id) {
+      message.error('接口不存在');
+      return;
+    }
+
+    // 在开始调用接口之前，将 invokeLoading 设置为 true，表示正在加载中
+    setInvokeLoading(true);
+    try {
+      const res = await invokeInterfaceInfoUsingPost({
+        id: params.id,
+        ...values,
+      });
+
+      // 将接口调用的结果（res.data）更新到 invokeRes 状态变量中
+      setInvokeRes(res.data);
+      message.success('请求成功');
+    } catch (error: any) {
+      message.error('操作失败，' + error.message);
+    }
+
+    // 无论成功或失败，最后将 invokeLoading 设置为 false，表示加载完成
+    setInvokeLoading(false);
+  }
 
   return (
     <PageContainer title='查看接口'>
@@ -53,6 +81,7 @@ const Index: React.FC = () => {
           )
         }
       </Card>
+      <Divider />
       <Card>
         {/* 创建一个表单,表单名称为"invoke",布局方式为垂直布局,当表单提交时调用onFinish方法 */}
         <Form name="invoke" layout="vertical" onFinish={onFinish}>
@@ -68,6 +97,10 @@ const Index: React.FC = () => {
             </Button>
           </Form.Item>
         </Form>
+      </Card>
+      <Divider />
+      <Card title="返回结果" loading={invokeLoading}>
+        {invokeRes}
       </Card>
     </PageContainer>
   );

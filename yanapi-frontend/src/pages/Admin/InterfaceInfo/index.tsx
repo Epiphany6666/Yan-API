@@ -55,7 +55,7 @@ const TableList: React.FC = () => {
 
   /**
    * @en-US Update node
-   * @zh-CN 更新节点
+   * @zh-CN 创建节点
    *
    * @param fields
    */
