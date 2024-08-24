@@ -43,6 +43,11 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-circuitbreaker-reactor-resilience4j</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.luoyan</groupId>
+			<artifactId>yanapi-client-sdk</artifactId>
+			<version>0.0.1</version>
+		</dependency>
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
