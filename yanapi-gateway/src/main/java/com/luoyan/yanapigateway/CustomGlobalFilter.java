@@ -82,9 +82,19 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
         }
 
         // 5. 请求的 Mock 接口是否存在？
+        // todo 从数据库中查询模拟接口是否存在，以及请求方法是否匹配（还可以校验请求参数）
+        if (response.getStatusCode() == HttpStatus.OK) {
+
+        } else {
+            // 8.调用失败，返回一个规范的错误码
+            return handleInvokeError(response);
+        }
         // 6. 请求参数，调用 Mock 接口校验
         // 7. 响应日志
         // 8. 调用次数，接口调用最大次数 + 1
+        Mono<Void> filter = chain.filter(exchange);
+        // 调用成功之后要输入一个响应日志
+        log.info("响应: " + response.getStatusCode());
         // 9. 调用限流，返回一个规范的错误码
         log.info("custom global filter");
         return chain.filter(exchange);
@@ -97,6 +107,11 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
 
     public Mono<Void> handleNoAuth(ServerHttpResponse response) {
         response.setStatusCode(HttpStatus.FORBIDDEN);
+        return response.setComplete();
+    }
+
+    public Mono<Void> handleInvokeError(ServerHttpResponse response) {
+        response.setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR);
         return response.setComplete();
     }
 }
