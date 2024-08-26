@@ -1,4 +1,4 @@
-package com.luoyan.yanapigateway;
+package com.luoyan;
 
 import com.luoyan.yanapiclientsdk.utils.SignUtils;
 import lombok.extern.slf4j.Slf4j;

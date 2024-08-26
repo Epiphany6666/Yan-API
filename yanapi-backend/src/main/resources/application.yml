@@ -103,3 +103,16 @@ yanapi:
   client:
     access-key: luoyan
     secret-key: abcdefgh
+# 以下配置指定了应用的名称、使用的协议（Dubbo）、注册中心的类型（Nacos）和地址
+dubbo:
+  application:
+    # 设置应用的名称
+    name: dubbo-springboot-demo-provider
+  # 指定使用 Dubbo 协议，且端口设置为 -1，表示随机分配可用端口
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    # 配置注册中心为 Nacos，使用的地址是 nacos://localhost:8848
+    id: nacos-registry
+    address: nacos://localhost:8848
