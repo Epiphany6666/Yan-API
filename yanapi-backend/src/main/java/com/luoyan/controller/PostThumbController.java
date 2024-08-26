@@ -5,11 +5,12 @@ import com.luoyan.common.ErrorCode;
 import com.luoyan.common.ResultUtils;
 import com.luoyan.exception.BusinessException;
 import com.luoyan.model.dto.postthumb.PostThumbAddRequest;
-import com.luoyan.model.entity.User;
 import com.luoyan.service.PostThumbService;
 import com.luoyan.service.UserService;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
+import com.luoyan.yanapicommon.model.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

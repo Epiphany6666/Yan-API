@@ -16,7 +16,6 @@ import com.luoyan.model.dto.user.UserQueryRequest;
 import com.luoyan.model.dto.user.UserRegisterRequest;
 import com.luoyan.model.dto.user.UserUpdateMyRequest;
 import com.luoyan.model.dto.user.UserUpdateRequest;
-import com.luoyan.model.entity.User;
 import com.luoyan.model.vo.LoginUserVO;
 import com.luoyan.model.vo.UserVO;
 import com.luoyan.service.UserService;
@@ -26,6 +25,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.luoyan.yanapicommon.model.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import me.chanjar.weixin.common.bean.WxOAuth2UserInfo;
 import me.chanjar.weixin.common.bean.oauth2.WxOAuth2AccessToken;

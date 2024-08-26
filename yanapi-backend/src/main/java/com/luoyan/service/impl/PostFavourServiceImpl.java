@@ -10,10 +10,11 @@ import com.luoyan.exception.BusinessException;
 import com.luoyan.mapper.PostFavourMapper;
 import com.luoyan.model.entity.Post;
 import com.luoyan.model.entity.PostFavour;
-import com.luoyan.model.entity.User;
 import com.luoyan.service.PostFavourService;
 import com.luoyan.service.PostService;
 import javax.annotation.Resource;
+
+import com.luoyan.yanapicommon.model.entity.User;
 import org.springframework.aop.framework.AopContext;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

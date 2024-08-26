@@ -7,10 +7,11 @@ import com.luoyan.exception.BusinessException;
 import com.luoyan.mapper.PostThumbMapper;
 import com.luoyan.model.entity.Post;
 import com.luoyan.model.entity.PostThumb;
-import com.luoyan.model.entity.User;
 import com.luoyan.service.PostService;
 import com.luoyan.service.PostThumbService;
 import javax.annotation.Resource;
+
+import com.luoyan.yanapicommon.model.entity.User;
 import org.springframework.aop.framework.AopContext;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

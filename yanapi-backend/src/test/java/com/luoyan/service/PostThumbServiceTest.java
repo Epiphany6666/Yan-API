@@ -1,7 +1,8 @@
 package com.luoyan.service;
 
-import com.luoyan.model.entity.User;
 import javax.annotation.Resource;
+
+import com.luoyan.yanapicommon.model.entity.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;

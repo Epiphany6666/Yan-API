@@ -10,13 +10,14 @@ import com.luoyan.model.dto.post.PostQueryRequest;
 import com.luoyan.model.dto.postfavour.PostFavourAddRequest;
 import com.luoyan.model.dto.postfavour.PostFavourQueryRequest;
 import com.luoyan.model.entity.Post;
-import com.luoyan.model.entity.User;
 import com.luoyan.model.vo.PostVO;
 import com.luoyan.service.PostFavourService;
 import com.luoyan.service.PostService;
 import com.luoyan.service.UserService;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
+import com.luoyan.yanapicommon.model.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

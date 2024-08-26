@@ -6,9 +6,9 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.luoyan.common.ErrorCode;
 import com.luoyan.exception.BusinessException;
 import com.luoyan.model.dto.userinterfaceinfo.UserInterfaceInfoQueryRequest;
-import com.luoyan.model.entity.UserInterfaceInfo;
-import com.luoyan.service.UserInterfaceInfoService;
 import com.luoyan.mapper.UserInterfaceInfoMapper;
+import com.luoyan.service.UserInterfaceInfoService;
+import com.luoyan.yanapicommon.model.entity.UserInterfaceInfo;
 import org.springframework.stereotype.Service;
 
 /**
@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 */
 @Service
 public class UserInterfaceInfoServiceImpl extends ServiceImpl<UserInterfaceInfoMapper, UserInterfaceInfo>
-    implements UserInterfaceInfoService{
+    implements UserInterfaceInfoService {
     @Override
     public void validUserInterfaceInfo(UserInterfaceInfo userInterfaceInfo, boolean add) {
         // 判断接口信息对象是否为空,为空则抛出参数错误的异常

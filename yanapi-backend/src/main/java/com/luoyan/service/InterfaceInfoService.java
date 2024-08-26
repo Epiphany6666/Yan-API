@@ -3,10 +3,9 @@ package com.luoyan.service;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.luoyan.model.dto.interfaceInfo.InterfaceInfoQueryRequest;
-import com.luoyan.model.entity.InterfaceInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.luoyan.model.entity.Post;
 import com.luoyan.model.vo.InterfaceInfoVO;
+import com.luoyan.yanapicommon.model.entity.InterfaceInfo;
 
 import javax.servlet.http.HttpServletRequest;
 

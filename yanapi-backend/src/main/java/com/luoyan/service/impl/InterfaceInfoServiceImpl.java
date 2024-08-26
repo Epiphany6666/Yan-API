@@ -7,9 +7,9 @@ import com.luoyan.common.ErrorCode;
 import com.luoyan.exception.BusinessException;
 import com.luoyan.mapper.InterfaceInfoMapper;
 import com.luoyan.model.dto.interfaceInfo.InterfaceInfoQueryRequest;
-import com.luoyan.model.entity.InterfaceInfo;
 import com.luoyan.model.vo.InterfaceInfoVO;
 import com.luoyan.service.InterfaceInfoService;
+import com.luoyan.yanapicommon.model.entity.InterfaceInfo;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 

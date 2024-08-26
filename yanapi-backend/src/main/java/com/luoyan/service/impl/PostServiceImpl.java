@@ -15,7 +15,6 @@ import com.luoyan.model.dto.post.PostQueryRequest;
 import com.luoyan.model.entity.Post;
 import com.luoyan.model.entity.PostFavour;
 import com.luoyan.model.entity.PostThumb;
-import com.luoyan.model.entity.User;
 import com.luoyan.model.vo.PostVO;
 import com.luoyan.model.vo.UserVO;
 import com.luoyan.service.PostService;
@@ -29,6 +28,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
+import com.luoyan.yanapicommon.model.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import cn.hutool.core.collection.CollUtil;
 import org.apache.commons.lang3.ObjectUtils;

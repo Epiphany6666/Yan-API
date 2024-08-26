@@ -8,13 +8,14 @@ import com.luoyan.constant.FileConstant;
 import com.luoyan.exception.BusinessException;
 import com.luoyan.manager.CosManager;
 import com.luoyan.model.dto.file.UploadFileRequest;
-import com.luoyan.model.entity.User;
 import com.luoyan.model.enums.FileUploadBizEnum;
 import com.luoyan.service.UserService;
 import java.io.File;
 import java.util.Arrays;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+
+import com.luoyan.yanapicommon.model.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,18 +1,13 @@
 package com.luoyan.model.vo;
 
-import cn.hutool.json.JSONUtil;
-import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableLogic;
-import com.luoyan.model.entity.InterfaceInfo;
 import com.luoyan.model.entity.Post;
+import com.luoyan.yanapicommon.model.entity.InterfaceInfo;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 /**
  * 帖子视图

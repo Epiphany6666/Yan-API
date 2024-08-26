@@ -3,11 +3,12 @@ package com.luoyan.service;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.luoyan.model.dto.user.UserQueryRequest;
-import com.luoyan.model.entity.User;
 import com.luoyan.model.vo.LoginUserVO;
 import com.luoyan.model.vo.UserVO;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
+
+import com.luoyan.yanapicommon.model.entity.User;
 import me.chanjar.weixin.common.bean.WxOAuth2UserInfo;
 
 /**

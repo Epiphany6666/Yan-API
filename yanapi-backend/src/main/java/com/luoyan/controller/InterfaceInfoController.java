@@ -1,6 +1,5 @@
 package com.luoyan.controller;
 
-import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.google.gson.Gson;
 import com.luoyan.annotation.AuthCheck;
@@ -9,22 +8,20 @@ import com.luoyan.constant.UserConstant;
 import com.luoyan.exception.BusinessException;
 import com.luoyan.exception.ThrowUtils;
 import com.luoyan.model.dto.interfaceInfo.*;
-import com.luoyan.model.entity.InterfaceInfo;
-import com.luoyan.model.entity.User;
 import com.luoyan.model.enums.InterfaceInfoStatusEnum;
 import com.luoyan.model.vo.InterfaceInfoVO;
 import com.luoyan.service.InterfaceInfoService;
 import com.luoyan.service.UserService;
 import com.luoyan.yanapiclientsdk.client.YanApiClient;
+import com.luoyan.yanapicommon.model.entity.InterfaceInfo;
+import com.luoyan.yanapicommon.model.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
 
 /**
  * 接口管理

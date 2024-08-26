@@ -2,7 +2,7 @@ package com.luoyan.service;
 
 import com.luoyan.model.entity.PostThumb;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.luoyan.model.entity.User;
+import com.luoyan.yanapicommon.model.entity.User;
 
 /**
  * 帖子点赞服务

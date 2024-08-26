@@ -1,7 +1,6 @@
 package com.luoyan.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.google.gson.Gson;
 import com.luoyan.annotation.AuthCheck;
 import com.luoyan.common.*;
 import com.luoyan.constant.UserConstant;
@@ -11,13 +10,12 @@ import com.luoyan.model.dto.userinterfaceinfo.UserInterfaceInfoAddRequest;
 import com.luoyan.model.dto.userinterfaceinfo.UserInterfaceInfoEditRequest;
 import com.luoyan.model.dto.userinterfaceinfo.UserInterfaceInfoQueryRequest;
 import com.luoyan.model.dto.userinterfaceinfo.UserInterfaceInfoUpdateRequest;
-import com.luoyan.model.entity.UserInterfaceInfo;
-import com.luoyan.model.entity.User;
 import com.luoyan.service.UserInterfaceInfoService;
 import com.luoyan.service.UserService;
 import com.luoyan.yanapiclientsdk.client.YanApiClient;
+import com.luoyan.yanapicommon.model.entity.User;
+import com.luoyan.yanapicommon.model.entity.UserInterfaceInfo;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
 

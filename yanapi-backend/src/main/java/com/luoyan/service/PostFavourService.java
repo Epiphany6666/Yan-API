@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.luoyan.model.entity.Post;
 import com.luoyan.model.entity.PostFavour;
-import com.luoyan.model.entity.User;
+import com.luoyan.yanapicommon.model.entity.User;
 
 /**
  * 帖子收藏服务

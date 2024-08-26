@@ -1,8 +1,8 @@
 package com.luoyan.yanapicommon.model.vo;
 
 import com.baomidou.mybatisplus.annotation.TableField;
-import com.luoyan.model.entity.InterfaceInfo;
-import com.luoyan.model.entity.Post;
+import com.luoyan.yanapicommon.model.entity.InterfaceInfo;
+import com.luoyan.yanapicommon.model.entity.Post;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;
 
