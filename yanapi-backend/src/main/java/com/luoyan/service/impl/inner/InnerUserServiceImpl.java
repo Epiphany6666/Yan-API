@@ -16,7 +16,7 @@ public class InnerUserServiceImpl implements InnerUserService {
     private UserMapper userMapper;
 
     @Override
-    public User getInvokeUser(String accessKey, String secretKey) {
+    public User getInvokeUser(String accessKey) {
         if (StringUtils.isAnyBlank(accessKey)) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR);
         }
