@@ -25,7 +25,7 @@ interface ResponseStructure {
  * @doc https://umijs.org/docs/max/request#配置
  */
 export const requestConfig: RequestConfig = {
-  baseURL: 'http://localhost:8101',
+  baseURL: process.env.NODE_ENV === 'production' ? 'http://www.luo-yan.cn:8101' : 'http://localhost:8101',
   withCredentials: true,
   // 错误处理： umi@3 的错误处理方案。
   errorConfig: {
