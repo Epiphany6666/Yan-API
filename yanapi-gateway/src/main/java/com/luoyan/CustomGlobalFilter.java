@@ -65,10 +65,10 @@ public class CustomGlobalFilter implements GlobalFilter, Ordered {
         // 拿到响应对象
         ServerHttpResponse response = exchange.getResponse();
         // 2. 访问控制，黑白名单
-        if (!IP_WHITE_LIST.contains(sourceAddress)) {
-            response.setStatusCode(HttpStatus.FORBIDDEN);
-            return response.setComplete();
-        }
+//        if (!IP_WHITE_LIST.contains(sourceAddress)) {
+//            response.setStatusCode(HttpStatus.FORBIDDEN);
+//            return response.setComplete();
+//        }
 
         // 4. 用户鉴权（判断 ak, sk 是否合法）
         HttpHeaders headers = request.getHeaders();
