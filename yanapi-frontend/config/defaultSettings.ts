@@ -1,4 +1,5 @@
 import { ProLayoutProps } from '@ant-design/pro-components';
+import {SYSTEM_LOGO} from "@/constants";
 
 /**
  * @name
@@ -15,9 +16,9 @@ const Settings: ProLayoutProps & {
   fixedHeader: false,
   fixSiderbar: true,
   colorWeak: false,
-  title: 'Ant Design Pro',
+  title: 'Yan-API开放平台',
   pwa: true,
-  logo: 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg',
+  logo: 'https://luo-yan.oss-cn-guangzhou.aliyuncs.com/favicon.png?Expires=1724820973&OSSAccessKeyId=TMP.3KkbuebtiNknmHeeMcCTipXkyYmmyADKpwLyHcZBViieLvFjg3QDYuA3NQsGf5froA9KF227rToVKfGzKyeyijZ4e6Lcri&Signature=fpsGTH3BYawMzy%2F00yKD9H%2FE0ho%3D',
   iconfontUrl: '',
   token: {
     // 参见ts声明，demo 见文档，通过token 修改样式

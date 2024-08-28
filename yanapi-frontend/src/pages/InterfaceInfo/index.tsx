@@ -87,7 +87,7 @@ const Index: React.FC = () => {
         <Form name="invoke" layout="vertical" onFinish={onFinish}>
           {/* 创建一个表单项,用于输入请求参数,表单项名称为"userRequestParams" */}
           <Form.Item label="请求参数" name="userRequestParams">
-            <Input.TextArea />
+            <Input.TextArea placeholder='{"name": "luoyan"}' />
           </Form.Item>
           {/* 创建一个包裹项,设置其宽度占据 16 个栅格列 */}
           <Form.Item wrapperCol={{ span: 16 }}>

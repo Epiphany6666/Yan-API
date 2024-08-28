@@ -179,7 +179,8 @@ const TableList: React.FC = () => {
         // },
 
         // 展示文本
-        valueType: 'text'
+        valueType: 'text',
+        width: '1px'
       },
       {
         title: '描述',
@@ -290,7 +291,11 @@ const TableList: React.FC = () => {
       },
     ];
   return (
-    <PageContainer>
+    <PageContainer
+      style={{
+        width: '2500px'
+      }}
+    >
       <ProTable<API.RuleListItem, API.PageParams>
         headerTitle={'查询表格'}
         actionRef={actionRef}

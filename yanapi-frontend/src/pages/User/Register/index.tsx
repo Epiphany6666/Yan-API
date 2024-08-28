@@ -6,13 +6,13 @@ import {
   UserOutlined,
   WeiboCircleOutlined,
 } from '@ant-design/icons';
-import {LoginForm, ProFormText,} from '@ant-design/pro-components';
+import {LoginForm, ProFormCheckbox, ProFormText,} from '@ant-design/pro-components';
 import {Helmet, history, useModel} from '@umijs/max';
 import {Alert, message, Tabs} from 'antd';
 import {createStyles} from 'antd-style';
 import React, {useState} from 'react';
 import Settings from '../../../../config/defaultSettings';
-import {PLANET_LINK, SYSTEM_LOGO} from '@/constants/index'
+import {CSDN_LINK, SYSTEM_LOGO} from '@/constants/index'
 import { userRegisterUsingPost } from '@/services/Yan-API-backend/userController';
 
 const useStyles = createStyles(({ token }) => {
@@ -94,7 +94,7 @@ const Register: React.FC = () => {
     try {
       // 注册
       const id = await userRegisterUsingPost(values);
-      if (id > 0) {
+      if (id) {
         const defaultLoginSuccessMessage = '注册成功！';
         message.success(defaultLoginSuccessMessage);
         /** 此方法会跳转到 redirect 参数所在的位置 */
@@ -141,8 +141,8 @@ const Register: React.FC = () => {
           }
           }
           logo={<img alt="logo" src={SYSTEM_LOGO} />}
-          title="洛言用户中心"
-          subTitle={<a href={PLANET_LINK} target="_blank" rel="noreferrer">最好的用户管理中心</a>}
+          title="Yan-API开放平台"
+          subTitle={<a href={CSDN_LINK} target="_blank" rel="noreferrer">专注于开发效率的提升</a>}
           initialValues={{
             autoLogin: true,
           }}
@@ -173,7 +173,7 @@ const Register: React.FC = () => {
                   size: 'large',
                   prefix: <UserOutlined />,
                 }}
-                placeholder={'账号: admin or user'}
+                placeholder={'请输入账号'}
                 rules={[
                   {
                     required: true,
@@ -219,6 +219,17 @@ const Register: React.FC = () => {
               />
             </>
           )}
+          <div
+            style={{
+              marginBottom: 24,
+            }}
+          >
+            <a
+              href="/user/login"
+            >
+              去登录
+            </a>
+          </div>
         </LoginForm>
       </div>
       <Footer />

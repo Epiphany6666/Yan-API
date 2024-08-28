@@ -9,6 +9,7 @@ import defaultSettings from '../config/defaultSettings';
 
 const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
+const whiteList = ['/user/register', loginPath]
 
 /**
  * @see  https://umijs.org/zh-CN/plugins/plugin-initial-state
@@ -28,7 +29,10 @@ export async function getInitialState(): Promise<InitialState> {
     }
     // 如果在获取用户信息的过程中发生错误，就把页面重定向到登录页面
   } catch (error) {
-    history.push(loginPath);
+    const { location } = history
+    if (!whiteList.includes(location.pathname)) {
+      history.push(loginPath);
+    }
   }
   // 返回修改后的状态
   return state;
@@ -51,7 +55,6 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
     footerRender: () => <Footer />,
     onPageChange: () => {
       const { location } = history;
-      const whiteList = ['/user/register', loginPath]
       if (!whiteList.includes(location.pathname)) {
         return;
       }

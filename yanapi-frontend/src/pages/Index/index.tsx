@@ -47,7 +47,7 @@ const Index: React.FC = () => {
         }}
         pagination={
           {
-            pageSize: 2,
+            pageSize: 10,
             total: total,
             showTotal(total: number) {
               return '总数' + total;
